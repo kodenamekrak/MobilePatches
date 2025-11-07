@@ -12,4 +12,11 @@ payload = "resizable = not (love.system.getOS() == 'Android' or love.system.getO
 match_indent = true
 times = 1
 
-
+[[patches]]
+[patches.pattern]
+target = "main.lua"
+pattern = "local os = love.system.getOS()"
+position = "after"
+payload = "love.window.updateMode(2, 1)"
+match_indent = true
+times = 1
